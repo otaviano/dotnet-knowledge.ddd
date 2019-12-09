@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{D192CC7A-54DC-4444-AE3B-5B70FE62CCCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{F4DAE991-540D-470C-A849-E585FB946847}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{C2256B9A-D198-495B-8A43-93643C95B95B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra.IoC", "4 - Infra.IoC", "{1A8E7B78-3EF2-4574-BDF3-916E36255E18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra.Data", "5 - Infra.Data", "{FCA3209C-5579-4129-AC84-31E8F6A71794}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowledge.Ddd.Mvc", "src\knowledge.ddd.MVC\Knowledge.Ddd.Mvc.csproj", "{F61B4710-C657-4778-9E85-DAAEA0F4A9A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F61B4710-C657-4778-9E85-DAAEA0F4A9A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61B4710-C657-4778-9E85-DAAEA0F4A9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61B4710-C657-4778-9E85-DAAEA0F4A9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61B4710-C657-4778-9E85-DAAEA0F4A9A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F61B4710-C657-4778-9E85-DAAEA0F4A9A8} = {D192CC7A-54DC-4444-AE3B-5B70FE62CCCC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {335D98A2-6A2B-46D0-ADD0-5FA3A69B9B39}
+	EndGlobalSection
+EndGlobal
