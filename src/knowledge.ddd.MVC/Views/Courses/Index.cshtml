@@ -1,0 +1,23 @@
+﻿@model Knowledge.Ddd.Application.ViewModel.CourseViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var item in Model.Courses) {
+    <div class="container body-content">
+        <div class="row course-content">
+            <div class="course-image-container">
+                <div class="course-image" style="background-image:url(@item.ImageUrl)"></div>
+                <span>@item.Name</span>
+            </div>
+            
+            
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </div>
+    </div>
+}
