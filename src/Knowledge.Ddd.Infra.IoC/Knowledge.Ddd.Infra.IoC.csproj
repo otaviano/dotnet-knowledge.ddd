@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Knowledge.Ddd.Application\Knowledge.Ddd.Application.csproj" />
+    <ProjectReference Include="..\Knowledge.Ddd.Bus\Knowledge.Ddd.Bus.csproj" />
     <ProjectReference Include="..\Knowledge.Ddd.Infra.Data\Knowledge.Ddd.Infra.Data.csproj" />
   </ItemGroup>
 

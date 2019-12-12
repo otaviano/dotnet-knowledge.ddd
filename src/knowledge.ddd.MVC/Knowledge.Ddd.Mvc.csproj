@@ -18,7 +18,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Knowledge.Ddd.Infra.Data\Knowledge.Ddd.Infra.Data.csproj" />
     <ProjectReference Include="..\Knowledge.Ddd.Infra.IoC\Knowledge.Ddd.Infra.IoC.csproj" />
   </ItemGroup>
 

@@ -6,6 +6,11 @@ using Knowledge.Ddd.Infra.Data.Repositories;
 using Knowledge.Ddd.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Knowledge.Ddd.Domain.Core.Bus;
+using Knowledge.Ddd.Bus;
+using MediatR;
+using Knowledge.Ddd.Domain.CommandHandlers;
+using Knowledge.Ddd.Domain.Commands;
 
 namespace Knowledge.Ddd.Infra.IoC
 {
@@ -13,7 +18,9 @@ namespace Knowledge.Ddd.Infra.IoC
     {
         public static void RegisterServices(IConfiguration configuration, IServiceCollection services)
         {
+            RegisterDomainLayer(services);
             RegisterApplicationLayer(services);
+            RegisterDomainInMemmoryMediatRLayer(services);
             RegisterInfraDataLayer(configuration, services);
         }
 
@@ -30,6 +37,16 @@ namespace Knowledge.Ddd.Infra.IoC
             });
 
             services.AddScoped<ICourseRepository, CourseRepository>();
+        }
+
+        private static void RegisterDomainLayer(IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
+        }
+
+        private static void RegisterDomainInMemmoryMediatRLayer(IServiceCollection services)
+        {
+            services.AddScoped<IMediatorHandler, InMemoryBus>();
         }
     }
 }

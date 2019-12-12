@@ -14,6 +14,12 @@ namespace Knowledge.Ddd.Infra.Data.Repositories
             this.dbContext = dbContext;
         }
 
+        public void Add(Course course)
+        {
+            dbContext.Courses.Add(course);
+            dbContext.SaveChanges();
+        }
+
         public IEnumerable<Course> GetAll()
         {
             return dbContext.Courses;

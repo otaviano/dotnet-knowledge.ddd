@@ -6,5 +6,6 @@ namespace Knowledge.Ddd.Application.Interfaces
     public interface ICourseService
     {
         CourseViewModel GetCourses();
+        void Create(CourseViewModel model);
     }
 }

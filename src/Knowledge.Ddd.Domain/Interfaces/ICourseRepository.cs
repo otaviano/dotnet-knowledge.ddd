@@ -7,5 +7,6 @@ namespace Knowledge.Ddd.Domain.Interfaces
     public interface ICourseRepository
     {
         IEnumerable<Course> GetAll();
+        void Add(Course course);
     }
 }
