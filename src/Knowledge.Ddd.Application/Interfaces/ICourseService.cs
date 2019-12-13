@@ -5,7 +5,8 @@ namespace Knowledge.Ddd.Application.Interfaces
 {
     public interface ICourseService
     {
-        CourseViewModel GetCourses();
+        IEnumerable<CourseViewModel> GetCourses();
+
         void Create(CourseViewModel model);
     }
 }

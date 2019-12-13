@@ -1,12 +1,13 @@
 ﻿using Knowledge.Ddd.Domain.Entities;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace Knowledge.Ddd.Domain.Interfaces
 {
     public interface ICourseRepository
     {
-        IEnumerable<Course> GetAll();
+        IQueryable<Course> GetAll();
+
         void Add(Course course);
     }
 }

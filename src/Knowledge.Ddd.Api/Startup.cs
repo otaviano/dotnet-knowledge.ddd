@@ -1,4 +1,5 @@
 using Knowledge.Ddd.Infra.IoC;
+using Knowledge.Ddd.Infra.IoC.Configurations;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,7 +25,8 @@ namespace Knowledge.Ddd.Api
             services.AddControllers();
             services.AddSwaggerGen(p => p.SwaggerDoc("v1", new OpenApiInfo{ Title = "University API", Version = "v1"}));
             services.AddMediatR(typeof(Startup));
-            
+            services.RegisterAutoMapper();
+
             DependencyContainer.RegisterServices(Configuration, services);
         }
 

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Knowledge.Ddd.Application.Interfaces;
 using Knowledge.Ddd.Application.ViewModel;
 using Knowledge.Ddd.Domain.Commands;
@@ -11,26 +13,27 @@ namespace Knowledge.Ddd.Application.Services
     {
         private readonly ICourseRepository courseRepository;
         private readonly IMediatorHandler bus;
+        private readonly IMapper autoMapper;
 
-        public CourseService(ICourseRepository courseRepository, IMediatorHandler bus)
+        public CourseService(IMapper autoMapper, ICourseRepository courseRepository, IMediatorHandler bus)
         {
             this.bus = bus;
+            this.autoMapper = autoMapper;
             this.courseRepository = courseRepository;
         }
 
         public void Create(CourseViewModel model)
         {
-            var command = new CreateCourseCommand(model.Name, model.Description, model.ImageUrl);
+            var command = autoMapper.Map<CreateCourseCommand>(model);
 
             bus.SendCommand(command);
         }
 
-        public CourseViewModel GetCourses()
+        public IEnumerable<CourseViewModel> GetCourses()
         {
-            return new CourseViewModel
-            {
-                Courses = courseRepository.GetAll()
-            };
+            var courses = courseRepository.GetAll();
+
+            return courses.ProjectTo<CourseViewModel>(autoMapper.ConfigurationProvider) ;
         }
     }
 }

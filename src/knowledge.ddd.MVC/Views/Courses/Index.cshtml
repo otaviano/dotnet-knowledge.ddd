@@ -1,4 +1,4 @@
-﻿@model Knowledge.Ddd.Application.ViewModel.CourseViewModel
+﻿@model IEnumerable<Knowledge.Ddd.Application.ViewModel.CourseViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,7 +6,7 @@
 }
 
 
-@foreach (var item in Model.Courses) {
+@foreach (var item in Model) {
     <div class="container body-content">
         <div class="row course-content">
             <div class="course-image-container">

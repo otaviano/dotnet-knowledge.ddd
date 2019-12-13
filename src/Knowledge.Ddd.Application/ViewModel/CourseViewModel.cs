@@ -13,7 +13,5 @@ namespace Knowledge.Ddd.Application.ViewModel
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
-
-        public IEnumerable<Course> Courses { get; set; }
     }
 }

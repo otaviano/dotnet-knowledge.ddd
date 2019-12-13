@@ -2,6 +2,7 @@
 using Knowledge.Ddd.Domain.Interfaces;
 using Knowledge.Ddd.Infra.Data.Context;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Knowledge.Ddd.Infra.Data.Repositories
 {
@@ -9,20 +10,16 @@ namespace Knowledge.Ddd.Infra.Data.Repositories
     {
         private readonly UniversityDBContext dbContext;
 
-        public CourseRepository(UniversityDBContext dbContext)
-        {
+        public CourseRepository(UniversityDBContext dbContext) => 
             this.dbContext = dbContext;
-        }
+
+        public IQueryable<Course> GetAll() => 
+            dbContext.Courses;
 
         public void Add(Course course)
         {
             dbContext.Courses.Add(course);
             dbContext.SaveChanges();
-        }
-
-        public IEnumerable<Course> GetAll()
-        {
-            return dbContext.Courses;
         }
     }
 }

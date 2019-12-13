@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Knowledge.Ddd.Infra.IoC;
+using MediatR;
+using Knowledge.Ddd.Infra.IoC.Configurations;
 
 namespace knowledge.ddd.MVC
 {
@@ -31,6 +33,8 @@ namespace knowledge.ddd.MVC
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMediatR(typeof(Startup));
+            services.RegisterAutoMapper();
 
             RegisterServices(Configuration, services);
         }
